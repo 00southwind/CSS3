@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转换</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background:red;
+            /*-moz-transform:translateY(100px);
+                 transform:translateY(100px);*/
+
+            -moz-transtion-property:all;
+                 transtion-property:all;
+
+            -moz-transtion-duration:2s;
+                 transtion-property:2s;
+
+            -moz-transtion-timing-function:ease-in-out;
+                 transtion-timing-function:ease-in-out;
+
+            -moz-transition:all 2s ease-in 0.5s;
+                 transition:all 2s ease-in 0.5s;
+
+        }
+
+        .box:hover{
+            width:400px;
+            height:300px;
+            background:blue;
+
+            /*-moz-transform:translate(100px,200px);
+                 transform:translate(100px,200px);*/
+
+            /*-moz-transform:skew(30deg,40deg);
+                 transform:skew(30deg,40deg);*/
+
+            -moz-transform:rotate(30deg);
+                 transform:rotate(30deg);
+        }
+    </style>
+</head>
+
+<body>
+ <div class="box">
+     
+ </div>   
+</body>
+</html>

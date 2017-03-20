@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background:#000;
+        }
+        #b1{
+            background:#FFF;
+        }
+        #b2{
+            background:#CCC;
+        }
+         #b3{
+            background:#FFF;
+        }
+        p{
+            background:#FFF;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oa=document.getElementById('b1');
+            var oGa=oa.getContext("2d");
+
+            var ob=document.getElementById('b2');
+            var oGb=ob.getContext("2d");
+
+            var oc=document.getElementById('b3');
+            var oGc=oc.getContext("2d");
+
+            oGa.rect(50, 50, 100, 100);
+            oGa.stroke();
+
+            oGa.clearRect(0, 0, oa.width, oa.height);
+            //清除路径
+            
+            oGb.save();
+            oGb.fillStyle="red";
+
+            oGb.beginPath();
+            oGb.moveTo(50,50);
+            oGb.lineTo(100,100);
+            oGb.lineTo(200,100);
+            oGb.closePath();
+
+            oGb.fill();
+            oGb.restore();
+
+            oGb.beginPath();
+            oGb.moveTo(50, 50);
+            oGb.lineTo(50,150);
+            oGb.lineTo(100,150);
+            oGb.closePath();
+            oGb.fill();
+            
+            oGc.beginPath();
+            oGc.lineCap='round';   //round(圆角)、square(高度多出为宽一半的值)
+            oGc.moveTo(50, 50);
+            oGc.lineTo(50,150);
+            oGc.lineWidth=20;
+
+            oGc.stroke();
+
+        }
+    </script>
+
+</head>
+<body>
+    <canvas id="b1" width="300" height="300">
+        <p>
+           浏览器不支持canvas
+        </p> 
+    </canvas>
+
+    <canvas id="b2" width="300" height="300">
+        <p>
+           浏览器不支持canvas
+        </p> 
+    </canvas>
+
+    <canvas id="b3" width="300" height="300">
+        <p>
+           浏览器不支持canvas
+        </p> 
+    </canvas>
+</body>
+</html>

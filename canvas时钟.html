@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+       body{
+        background:#000;
+       }
+       #sz{
+        background:#FFF;
+       }
+       p{
+        background:#FFF;
+       }
+    </style>
+    <script>
+        
+        window.onload=function(){
+            var oS=document.getElementById('sz');
+            var oSZ=oS.getContext("2d");
+            
+            setInterval(function toDram(){
+               var x=200;
+               var y=200;
+               var r=150;
+               
+               //获取本地时间
+               var oDate=new Date();
+               var oHours=oDate.getHours();
+               var oMins=oDate.getMinutes();
+               var oSec=oDate.getSeconds();
+               var oHoursValue=(-90+oHours*30+oMins/2)*Math.PI/180;
+               var oMinsValue=(-90+oMins*6)*Math.PI/180;
+               var oSecValue=(-90+oSec*6)*Math.PI/180;
+               oSZ.clearRect(0, 0, oS.width, oS.height)
+               
+               //小刻度
+               oSZ.beginPath();
+               for(var i=0;i<60;i++){
+                  oSZ.strokeStyle='black';
+                  oSZ.moveTo(x, y);
+                  oSZ.arc(x, y, r, 6*i*Math.PI/180, 6*(i+1)*Math.PI/180, false);
+               } 
+               oSZ.closePath();
+               oSZ.stroke();
+
+               //白圆盘1
+               oSZ.fillStyle='white';
+               oSZ.beginPath();
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*19/20, 0, 360*(i+1)*Math.PI/180, false);
+               oSZ.closePath();
+               oSZ.fill();
+               
+               //大刻度
+               oSZ.beginPath();
+               for(var i=0;i<12;i++){
+                  oSZ.strokeStyle='black';
+                  oSZ.moveTo(x, y);
+                  oSZ.arc(x, y, r, 30*i*Math.PI/180, 30*(i+1)*Math.PI/180, false);
+               } 
+               oSZ.closePath();
+               oSZ.stroke();
+
+               //白圆盘2
+               oSZ.fillStyle='white';
+               oSZ.beginPath();
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*18/20, 0, 360*(i+1)*Math.PI/180, false);
+               oSZ.closePath();
+               oSZ.fill();
+               
+               //圆心
+               oSZ.fillStyle='black';
+               oSZ.beginPath();
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*1/20, 0, 360*(i+1)*Math.PI/180, false);
+               oSZ.closePath();
+               oSZ.fill();
+
+               //时针
+               oSZ.lineWidth=5;
+               oSZ.beginPath();
+               oSZ.strokeStyle='black';
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*10/20, oHoursValue, oHoursValue, false);
+               oSZ.closePath();
+               oSZ.stroke();
+
+               //分针
+               oSZ.lineWidth=3;
+               oSZ.beginPath();
+               oSZ.strokeStyle='yellow';
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*14/20, oMinsValue, oMinsValue, false);
+               oSZ.closePath();
+               oSZ.stroke();
+
+               //秒针
+               oSZ.lineWidth=1;
+               oSZ.beginPath();
+               oSZ.strokeStyle='red';
+               oSZ.moveTo(x, y);
+               oSZ.arc(x, y, r*17/20, oSecValue, oSecValue, false);
+               oSZ.closePath();
+               oSZ.stroke();
+
+            },1)
+
+           // toDram();
+        };
+        
+    </script>
+</head>
+<body>
+    <canvas id="sz" width="400" height="400">
+        <p>浏览器不支持canvas</p>
+    </canvas>
+</body>
+</html>

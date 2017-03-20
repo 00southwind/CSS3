@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动小方块</title>
+    <style>
+        body{
+            background:#000;
+        }
+        #fk{
+            background:#FFF;
+        }
+         p{
+            background:#FFF;
+        }
+       
+    </style>
+    <script>
+            window.onload=function(){
+            var ld=document.getElementById('fk');
+            var old=ld.getContext("2d");
+            var num=0;
+            old.fillRect(0,0,100,100);
+            old.fillStyle='red';
+            setInterval(function(){
+                num++;
+                old.clearRect(0,0,ld.width,ld.height);
+                old.fillRect(num,num,100,100);
+
+                if(num>300){
+                       num=0;
+                       old.clearRect(0,0,ld.width,ld.height);
+                       old.fillRect(num,num,100,100);
+                 }
+            },30);
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="fk" width="400" height="400">
+     <p>浏览器不支持canvas</p>
+    </canvas>
+</body>
+</html>

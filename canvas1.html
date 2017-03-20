@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        body{
+            background:#000;
+        }
+        #a1{
+            background:#FFF;
+        }
+         #a2{
+            background:#CCC;
+        }
+         #a3{
+            background:#FFF;
+        }
+         #a4{
+            background:#CCC;
+        }
+        p{
+            background:#FFF;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oC=document.getElementById('a1');
+            var oGC=oC.getContext("2d");
+
+            var ob=document.getElementById('a2');
+            var oGb=ob.getContext("2d");
+
+            var oa=document.getElementById('a3');
+            var oGa=oa.getContext("2d");
+
+            var od=document.getElementById('a4');
+            var oGd=od.getContext("2d");
+
+            oGC.fillStyle='red';
+            oGC.lineWidth=20;
+            oGC.strokeStyle='yellow';
+            oGC.fillRect(100, 100, 100, 100);
+            oGC.strokeRect(100.5,100.5,100,100);
+             //画矩形有边框
+             
+            oGb.fillStyle='red';
+            oGb.lineWidth=20;
+            oGb.strokeStyle='blue';
+            //oGb.lineJoin='round';
+            oGb.lineJoin='bevel';
+
+            oGb.fillRect(100, 100, 100, 100);
+            oGb.strokeRect(100.5,100.5,100,100);
+            //画圆角/切角矩形
+            
+            oGa.beginPath();
+            oGa.moveTo(50,50);
+            oGa.lineTo(100,100);
+            oGa.lineTo(200,100);
+            oGa.closePath();
+            oGa.stroke();
+            //画三角形
+            
+            oGa.beginPath();
+            oGa.moveTo(50, 50);
+            oGa.lineTo(50,150);
+            oGa.lineTo(100,150);
+            oGa.closePath();
+            oGa.fillStyle='red';
+            oGa.fill();
+            //画直角
+            
+            oGd.rect(100,100, 100, 100);
+            oGd.fillStyle='red';
+            oGd.fill()
+        }
+         
+    </script>
+</head>
+<body>
+    <canvas id="a1" width="300" height="300">
+        <p>浏览器不支持canvas</p>
+    </canvas>
+
+    <canvas id="a2" width="300" height="300">
+        <p>浏览器不支持canvas</p>
+    </canvas>
+
+    <canvas id="a3" width="300" height="300">
+        <p>浏览器不支持canvas</p>
+    </canvas>
+
+    <canvas id="a4" width="300" height="300">
+        <p>浏览器不支持canvas</p>
+    </canvas>
+</body>
+</html>

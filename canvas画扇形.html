@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画扇形</title>
+     <style>
+        body{
+            background:#000;
+        }
+        #sx{
+            background:#FFF;
+        }
+         #hy{
+            background:#CCC;
+        }
+         p{
+            background:#FFF;
+        }
+       
+    </style>
+    <script>
+        window.onload=function(){
+            var oS=document.getElementById('sx');
+            var oSX=oS.getContext('2d');
+            oSX.moveTo(200, 200);
+            oSX.arc(200,200,150,0,120*Math.PI/180,false);
+            oSX.closePath();
+            oSX.stroke();
+
+            var oh=document.getElementById('hy');
+            var oY=oh.getContext('2d');
+            oY.fillStyle='yellow';
+            oY.arc(200,200,150,0,360*Math.PI/180,false);
+            oY.closePath();
+            oY.fill();
+
+
+        }
+    </script>
+</head>
+<body>
+ <canvas id="sx" width="400" height="400">
+     <p>浏览器不支持canvas</p>
+ </canvas> 
+
+ <canvas id="hy" width="400" height="400">
+     <p>浏览器不支持canvas</p>
+ </canvas>   
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轨迹动画</title>
+     <style>
+
+          .pic{
+            width:50px;
+            height:50px;
+            position:relative;
+            -moz-animation:demo2 5s ease infinite alternate;
+            animation:demo2 5s ease infinite alternate;
+            
+          }
+          .pic img{
+            border-radius: 50%;
+            -moz-animation:demo2 5s ease infinite alternate;
+            animation:demo2 5s ease infinite alternate;
+          }
+
+          @-moz-keyframes demo2{
+            0%{
+              width:50px;
+              height:50px;
+              left:0;
+              top:0;  
+            }
+            25%{
+               width:100px;
+               height:100px;
+               left:0;
+               top:400px; 
+            }
+            50%{ 
+                width:150px;
+                height:150px;
+                top:400px;
+                left:600px;
+            }
+            75%{ 
+                width:200px;
+                height:200px;
+                top:0px;
+                left:600px;
+            }
+           
+           100%{
+                width:50px;
+                height:50px;
+                left:0;
+                top:0px;
+            }
+
+            }
+
+            @keyframes demo2{
+            0%{
+              width:50px;
+              height:50px;
+              left:0;
+              top:0;  
+            }
+            25%{
+               width:100px;
+               height:100px;
+               left:0;
+               top:400px; 
+            }
+            50%{ 
+                width:150px;
+                height:150px;
+                top:400px;
+                left:600px;
+            }
+            75%{ 
+                width:200px;
+                height:200px;
+                top:0px;
+                left:600px;
+            }
+           
+           100%{
+                width:50px;
+                height:50px;
+                left:0;
+                top:0px;
+            }
+
+            }
+         /*pic end*/
+         .yuan{
+            width:50px;
+            height:50px;
+            background:red;
+            border-radius:50%;
+            float:right;
+            -moz-animation:demo3 2s ease-out infinite alternate;
+                 animation:demo3 2s ease-out infinite alternate;
+
+         }
+
+         @-moz-keyframes demo3{
+            0%{
+              width:50px;
+              height:50px;
+              background:red;  
+            }
+            40%{
+               width:50px;
+               height:50px;
+               background:green;
+               box-shadow: 0 0 20px yellow;
+            }
+            80%{ 
+                width:50px;
+                height:50px;
+               background:blue;
+               box-shadow: 0 0 20px yellow;
+            }
+           100%{ 
+                width:50px;
+                height:50px;
+                 background:red;
+            }
+            }
+
+            @keyframes demo3{
+            0%{
+              width:50px;
+              height:50px;
+              background:red;  
+            }
+            40%{
+               width:50px;
+               height:50px;
+               background:green;
+               box-shadow: 0 0 20px yellow;
+            }
+            80%{ 
+                width:50px;
+                height:50px;
+               background:blue;
+               box-shadow: 0 0 20px yellow;
+            }
+           100%{ 
+                width:50px;
+                height:50px;
+                 background:red;
+            }
+            }
+
+
+
+     </style>
+</head>
+<body>
+ <div class="pic">
+     <img src="images/2.jpg">
+ </div> 
+ <div class="yuan"></div>  
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+         .box{
+            width:650px;
+            height:464px; 
+            overflow:hidden;
+         }
+         .photo{
+            width:650px;
+            height:464px;  
+         }
+         .photo img{
+             width:650px;
+             height:464px;
+
+             -moz-animation:demo1 5s ease-in-out 1s infinite alternate;
+                  animation:demo1 5s ease-in-out 1s infinite alternate;
+         }
+         .txt{
+            width:650px;
+            height:464px;
+            background:rgba(255,255,255,0.3);
+            position:relative;
+            
+             -moz-animation:demo1 5s ease-out 1s infinite alternate;
+               animation:demo1 5s ease-out 1s infinite alternate;
+            
+         }
+          .txt p{
+            width:60%;
+            padding-top:20%;
+            margin:0 auto;
+            color:#FFF;
+            text-indent: 30px;
+           
+          }
+          @-moz-keyframes demo1{
+            0%{
+              width:650px;
+              height:464px;  
+            }
+            30%{
+               width:700px;
+               height:500px; 
+            }
+            40%{ 
+                width:650px;
+                height:464px;
+                top:0;
+            }
+
+           100%{
+                width:650px;
+                height:464px;
+                top:-465px;
+            }
+            }
+
+            @keyframes demo1{
+            0%{
+              width:650px;
+              height:464px;  
+            }
+            30%{
+               width:700px;
+               height:500px; 
+            }
+            40%{ 
+                width:650px;
+                height:464px;
+                top:0;
+            }
+
+           100%{
+                width:650px;
+                height:464px;
+                top:-465px;
+            }
+            }
+    </style>
+</head>
+
+<body>
+<div class="box">
+<div class="photo">
+    <img src="images/04.jpg">
+</div>
+<div class="txt">
+    <p>渴望时光的长河里，与你牵手，不离不弃，享受点点滴滴的快乐。保持淡然的心境，在生活中的琐碎小事中体验到平淡却又真实的幸福。有一种真爱，它不随着时间的流逝而有所改变，它不会被微小的尘埃磨去激情，即使繁华褪去后，圆润的光泽也依然闪烁，沉淀的更是风雨并肩的微笑。</p>
+</div> 
+</div>
+</body>
+</html>

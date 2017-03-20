@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画图</title>
+    <style>
+        body{
+            background:#000;
+        }
+        #oh{
+            background:#FFF;
+        }
+         p{
+            background:#FFF;
+        }
+
+       </style>
+       <script>
+            window.onload=function(){
+                var hx=document.getElementById('oh');
+                var ohx=hx.getContext('2d');
+
+                hx.onmousedown=function(ev){
+                    var ev=ev||window.envet;
+                    ohx.moveTo(ev.clientX-hx.offsetLeft,ev.clientY-hx.offsetTop);
+                    //起始目标点,鼠标坐标
+                
+                document.onmousemove=function(ev){//鼠标移动
+                    var ev=ev||window.event;
+                    ohx.lineTo(ev.clientX-hx.offsetLeft, ev.clientY-hx.offsetTop);
+                    ohx.stroke();//画线
+                }
+                
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                }
+              }
+            }
+            
+       </script>
+</head>
+<body>
+ <canvas id="oh" width="400" height="400">
+     <p>浏览器不支持canvas</p>
+ </canvas>  
+</body>
+</html>
